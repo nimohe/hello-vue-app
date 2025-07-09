@@ -1,13 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref,computed } from 'vue'
 
 const props = defineProps({
   msg: String,
 })
 
 const count = ref(0)
-
-const imageUrl = "/img/NM025871 冰冻帘子 冬天 2023-12-17.JPG";
+const baseUrl = computed(() => import.meta.env.BASE_URL)
 
 </script>
 
@@ -19,7 +18,7 @@ const imageUrl = "/img/NM025871 冰冻帘子 冬天 2023-12-17.JPG";
   </div>
 
   <p>
-    <img src="/img/NM025871 冰冻帘子 冬天 2023-12-17.JPG" alt="" srcset="">
+    <img :src="`${baseUrl}img/NM025871 冰冻帘子 冬天 2023-12-17.JPG`" alt="Banner">
   </p>
   
 </template>
